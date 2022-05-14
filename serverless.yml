@@ -1,0 +1,22 @@
+service: planets
+frameworkVersion: "3"
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  list:
+    handler: planets/list.list
+    memorySize: 128
+    description: List all available planets
+    events:
+      - http:
+          path: /planets
+          method: get
