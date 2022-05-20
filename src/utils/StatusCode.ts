@@ -1,5 +1,6 @@
 export enum StatusCode {
-  success = 200, // some content to return
-  successNoContent = 204, // no content to return
+  successOk = 200, // request succeeded
+  successCreated = 201, // new resource created
+  successNoContent = 204, // no content to send
   error = 500, // server error
 }

@@ -1,33 +1,35 @@
-import { PutItemCommandOutput } from "@aws-sdk/client-dynamodb";
 import { APIGatewayEvent, Context } from "aws-lambda";
-import { Planet } from "../model/planet";
+import { DBConnector } from "../model/DBConnector";
+import { Planet } from "../model/Planet";
 import { CreatePlanetService } from "../service/createPlanetService";
 import { BodyError } from "../utils/BodyError";
 import { BodySuccess } from "../utils/BodySuccess";
 import { ResponseUtil } from "../utils/ReponseUtil";
 import { Response } from "../utils/Response";
-import { StatusCode } from "../utils/StatusCode";
 
 export class CreatePlanetController extends CreatePlanetService {
+  constructor(dbConnector: DBConnector) {
+    super(dbConnector);
+  }
   create = async (
     event: APIGatewayEvent,
     context: Context
   ): Promise<Response> => {
-    const newPlanet: Planet = JSON.parse(event.body);
+    const params: Planet = JSON.parse(event.body);
 
     try {
-      const output: PutItemCommandOutput = await this.createPlanet(newPlanet);
-
-      if (output.$metadata.httpStatusCode !== StatusCode.success) {
-        return ResponseUtil.successNoContent();
-      }
-
+      const newPlanet = await this.createPlanet(params);
       const body: BodySuccess = {
         message: "Successfully created planet!",
         data: newPlanet,
-        rawData: output,
       };
-      return ResponseUtil.success(body);
+
+      if (newPlanet === null) {
+        body.message = "Se recibio su petición, pero vuelva a intertalo.";
+        return ResponseUtil.successNoContent(body);
+      }
+
+      return ResponseUtil.successCreatead(body);
     } catch (e) {
       const body: BodyError = {
         message: "Failed created planet",

@@ -3,7 +3,7 @@
 .env
 node_modules
 jspm_packages
-
+NOTES
 
 # Serverless directories
 .serverless
