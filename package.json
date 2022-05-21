@@ -17,6 +17,7 @@
     "@aws-sdk/client-dynamodb": "^3.92.0",
     "@aws-sdk/util-dynamodb": "^3.92.0",
     "@types/aws-sdk": "^2.7.0",
+    "axios": "^0.27.2",
     "serverless-dynamodb-local": "^0.2.40",
     "uuid": "^8.3.2"
   }

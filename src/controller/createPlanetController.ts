@@ -17,6 +17,9 @@ export class CreatePlanetController extends CreatePlanetService {
   ): Promise<Response> => {
     const params: Planet = JSON.parse(event.body);
 
+    //VALIDATIONS
+    //ADD BodyValidator
+
     try {
       const newPlanet = await this.createPlanet(params);
       const body: BodySuccess = {

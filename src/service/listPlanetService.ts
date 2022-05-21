@@ -6,7 +6,6 @@ import {
 import { unmarshall } from "@aws-sdk/util-dynamodb";
 import { DBConnector } from "../model/DBConnector";
 import { Planet } from "../model/Planet";
-import { StatusCode } from "../utils/StatusCode";
 
 export class ListPlanetService {
   private ddbClient: DynamoDBClient;

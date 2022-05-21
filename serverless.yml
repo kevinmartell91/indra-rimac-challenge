@@ -25,6 +25,22 @@ custom:
   serverless-offline: true # http prxy
 
 functions:
+  getPlanet:
+    handler: src/handlers/getById.get
+    name: get-planet-by-id
+    description: Get planet by id
+    memorySize: 128 # min mb
+    timeout: 5
+    events:
+      - http:
+          path: planets/{id}
+          method: GET
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - "dynamodb:GetItem"
+        Resource: !GetAtt PlanetTable.Arn
+
   createPlanet:
     handler: src/handlers/create.create
     name: create-planet
