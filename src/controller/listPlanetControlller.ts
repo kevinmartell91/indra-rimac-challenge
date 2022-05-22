@@ -1,10 +1,10 @@
 import { DBConnector } from "../model/DBConnector";
 import { Planet } from "../model/Planet";
 import { ListPlanetService } from "../service/listPlanetService";
-import { BodyError } from "../utils/BodyError";
-import { BodySuccess } from "../utils/BodySuccess";
+import { BodyError } from "../utils/interfaces/BodyError";
+import { BodySuccess } from "../utils/interfaces/BodySuccess";
 import { ResponseUtil } from "../utils/ReponseUtil";
-import { Response } from "../utils/Response";
+import { Response } from "../utils/interfaces/Response";
 
 export class ListPlanetController extends ListPlanetService {
   constructor(dbConnector: DBConnector) {
@@ -27,21 +27,21 @@ export class ListPlanetController extends ListPlanetService {
 
       if (planets === null) {
         body.message = "Se recibio su petición, pero vuelva a intertalo.";
-        return ResponseUtil.successNoContent(body);
+        return ResponseUtil.successfulResponseNoContent(body);
       }
       if (planets.length === 0) {
         body.message = "No se encontraron registros de planetas.";
         body.data = [];
-        return ResponseUtil.successNoContent(body);
+        return ResponseUtil.successfulResponseNoContent(body);
       }
-      return ResponseUtil.successOk(body);
+      return ResponseUtil.successfulResponseOk(body);
     } catch (e) {
       const body: BodyError = {
         message: "Failed retrieved planet list!",
         errorMessage: e.message,
         errorStack: e.errorStack,
       };
-      return ResponseUtil.error(body);
+      return ResponseUtil.serverErrorBadRequest(body);
     }
   };
 }

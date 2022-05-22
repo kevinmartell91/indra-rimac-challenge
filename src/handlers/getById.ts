@@ -6,7 +6,7 @@ import {
 } from "aws-lambda";
 import { GetByIdPlanetController } from "../controller/getByIdPlanetController";
 import { DynamoDBConnection } from "../model/DynamoDBConnection";
-import { Response } from "../utils/Response";
+import { Response } from "../utils/interfaces/Response";
 export const get: Handler = async (
   event: APIGatewayEvent,
   context: Context

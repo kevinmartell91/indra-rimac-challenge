@@ -6,7 +6,7 @@ import {
 import { marshall } from "@aws-sdk/util-dynamodb";
 import { Planet } from "../model/Planet";
 import { DBConnector } from "../model/DBConnector";
-import { StatusCode } from "../utils/StatusCode";
+import { SuccesfulStatusCode } from "../utils/StatusCode";
 
 export class CreatePlanetService {
   private ddbClient: DynamoDBClient;
@@ -21,7 +21,8 @@ export class CreatePlanetService {
       };
 
       const output = await this.ddbClient.send(new PutItemCommand(newItem));
-      if (output.$metadata.httpStatusCode !== StatusCode.successOk) return null;
+      if (output.$metadata.httpStatusCode !== SuccesfulStatusCode.Ok)
+        return null;
       return params as Planet;
     } catch (error) {
       throw error;

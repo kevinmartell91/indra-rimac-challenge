@@ -1,6 +1,6 @@
 import { BuildBodyJson } from "./BuildBodyJson";
-import { Body } from "./Body";
-import { Response } from "./Response";
+import { Body } from "./interfaces/Body";
+import { Response } from "./interfaces/Response";
 
 export class ResponseCreator {
   static CreateResponse(statusCode: number, body?: Body): Response {
