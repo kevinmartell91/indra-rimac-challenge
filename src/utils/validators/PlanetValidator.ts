@@ -120,6 +120,12 @@ export class PlanetValidator extends Validator<Planet> {
       .withMessage("Uno o más elementos del array no es un string")
       .must(
         (peliculas) =>
+          peliculas.filter((pelicula) => pelicula.trim() === textTypes.empty)
+            .length === 0
+      )
+      .withMessage("Uno o más elementos del array estan vacios")
+      .must(
+        (peliculas) =>
           peliculas.filter((pelicula) => {
             const match = pelicula
               .trim()
