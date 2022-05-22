@@ -4,8 +4,8 @@ import { GetByIdPlanetService } from "../service/getByIdPlanetService";
 import { getPlanetByIdSWAPIService } from "../SwAPi/services/getPlanetService";
 import { BodyError } from "../utils/interfaces/BodyError";
 import { BodySuccess } from "../utils/interfaces/BodySuccess";
-import { ResponseUtil } from "../utils/ReponseUtil";
 import { Response } from "../utils/interfaces/Response";
+import { ResponseUtil } from "../utils/ResponseUtil";
 
 export class GetByIdPlanetController extends GetByIdPlanetService {
   constructor(dbConnector: DBConnector) {

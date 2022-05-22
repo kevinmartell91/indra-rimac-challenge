@@ -1,9 +1,9 @@
 import { Validator } from "fluentvalidation-ts";
-import { Planet } from "../model/Planet";
-import { dataType } from "./enums/dataTypes";
-import { surfaceWater } from "./enums/surfaceWater";
-import { textTypes } from "./enums/textTypes";
-import { RegexExpression } from "./RegexExpresion";
+import { Planet } from "../../model/Planet";
+import { dataType } from "../enums/dataTypes";
+import { surfaceWater } from "../enums/surfaceWater";
+import { textTypes } from "../enums/textTypes";
+import { RegexExpression } from "./RegexExpression";
 
 export class PlanetValidator extends Validator<Planet> {
   constructor() {
@@ -63,7 +63,9 @@ export class PlanetValidator extends Validator<Planet> {
       .must((surperficie_agua) =>
         Object.values(surfaceWater).includes(surperficie_agua)
       )
-      .withMessage("El valor no puede ser menor a 0");
+      .withMessage(
+        "El valor ingresado no esta dentro de las opciones permitidas"
+      );
 
     this.ruleFor("poblacion")
       .notNull()

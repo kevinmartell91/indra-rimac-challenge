@@ -1,12 +1,12 @@
 import { APIGatewayEvent, Context } from "aws-lambda";
 import { DBConnector } from "../model/DBConnector";
 import { Planet } from "../model/Planet";
-import { PlanetValidator } from "../utils/PlanetValidator";
+import { PlanetValidator } from "../utils/validators/PlanetValidator";
 import { CreatePlanetService } from "../service/createPlanetService";
 import { Body } from "../utils/interfaces/Body";
 import { BodyError } from "../utils/interfaces/BodyError";
 import { BodySuccess } from "../utils/interfaces/BodySuccess";
-import { ResponseUtil } from "../utils/ReponseUtil";
+import { ResponseUtil } from "../utils/ResponseUtil";
 import { Response } from "../utils/interfaces/Response";
 import { v4 as uuidv4 } from "uuid";
 

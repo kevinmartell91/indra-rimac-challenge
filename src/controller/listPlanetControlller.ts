@@ -3,7 +3,7 @@ import { Planet } from "../model/Planet";
 import { ListPlanetService } from "../service/listPlanetService";
 import { BodyError } from "../utils/interfaces/BodyError";
 import { BodySuccess } from "../utils/interfaces/BodySuccess";
-import { ResponseUtil } from "../utils/ReponseUtil";
+import { ResponseUtil } from "../utils/ResponseUtil";
 import { Response } from "../utils/interfaces/Response";
 
 export class ListPlanetController extends ListPlanetService {

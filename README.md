@@ -6,24 +6,24 @@
 4. Crear un modelo de su elección mediante el uso de un endpoint POST, la data se tendrá que almacenar dentro de una base de datos.
 5. Crear un endpoint GET que muestre la data almacenada.
 
-## API de prueba SWAPI: 
+## API de prueba SWAPI:
 
 https://swapi.py4e.com/documentation
 
 ## Puntos de evaluación:
 
-- [ ] Mínimo 2 endpoints, GET para recuperar la información y POST para crear un elemento
-- [ ] Integración con una base de datos (DynamoDB o MySQL)
-- [ ] Integración con SWAPI
-- [ ] Uso de Serverless Framework
-- [ ] Uso de Node.js
-- [ ] Respeto de las buenas prácticas de desarrollo
-- [ ] Traducción de campos de inglés a español
+- [x] Mínimo 2 endpoints, GET para recuperar la información y POST para crear un elemento
+- [x] Integración con una base de datos (DynamoDB o MySQL)
+- [x] Integración con SWAPI
+- [x] Uso de Serverless Framework
+- [x] Uso de Node.js
+- [x] Respeto de las buenas prácticas de desarrollo
+- [x] Traducción de campos de inglés a español
 
 ## Puntos bonus:
 
 - [ ] Documentación de uso (2 puntos)
-- [ ] Pruebas unitarias (10 puntos)
+- [x] Pruebas unitarias (10 puntos)
 - [ ] Documentación en Open API/Swagger (2 puntos)
 - [ ] Desplegar sin errores en AWS con el comando deploy del framework serverless (2 puntos)
 - [ ] Mayor complejidad de Integración (3 puntos)

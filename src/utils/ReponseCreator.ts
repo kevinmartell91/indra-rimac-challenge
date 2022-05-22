@@ -8,7 +8,6 @@ export class ResponseCreator {
       statusCode: statusCode,
       body: BuildBodyJson.bodyToString(body),
     };
-    console.log("response", response);
     return response;
   }
 }
