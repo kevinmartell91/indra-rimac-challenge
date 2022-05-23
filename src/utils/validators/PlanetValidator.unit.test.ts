@@ -1,5 +1,5 @@
 import { surfaceWater } from "../enums/surfaceWater";
-import { MockDataPlanet } from "./mockData";
+import { MockDataPlanet } from "../test/mockData";
 import { PlanetValidator } from "./PlanetValidator";
 
 const validator = new PlanetValidator();

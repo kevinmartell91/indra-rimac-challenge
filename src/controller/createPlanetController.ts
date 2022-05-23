@@ -20,6 +20,7 @@ export class CreatePlanetController extends CreatePlanetService {
   ): Promise<Response> => {
     const params: Planet = JSON.parse(event.body);
     const validator = new PlanetValidator();
+
     // VALIDATIONS
     const validations = validator.validate(params);
     if (Object.keys(validations).length > 0) {
