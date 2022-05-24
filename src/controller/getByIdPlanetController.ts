@@ -1,7 +1,8 @@
 import { APIGatewayEvent, Context } from "aws-lambda";
 import { DBConnector } from "../model/DBConnector";
 import { GetByIdPlanetService } from "../service/getByIdPlanetService";
-import { getPlanetByIdSWAPIService } from "../SwAPi/services/getPlanetService";
+import { getPlanetByIdSWAPIService } from "../service/swapi/services/getPlanetService";
+import { textTypes } from "../utils/enums/textTypes";
 import { BodyError } from "../utils/interfaces/BodyError";
 import { BodySuccess } from "../utils/interfaces/BodySuccess";
 import { Response } from "../utils/interfaces/Response";
@@ -34,9 +35,13 @@ export class GetByIdPlanetController extends GetByIdPlanetService {
         body.message = "No se encontraron registros con ese id.";
         body.data = {};
         return ResponseUtil.successfulResponseNoContent(body);
+      } else {
+        // setting 'body' property with where the data is comming
+        // from, so its handler kwnows knows to comunicate with
+        // create handler
+        body.dataFrom = textTypes.externalDatabase;
       }
-      // then create a new planet in dynamo
-      // TODO: JHOW?
+
       // return response from swapi
       body.data = planet;
       return ResponseUtil.successfulResponseOk(body);

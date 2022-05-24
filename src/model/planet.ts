@@ -1,7 +1,7 @@
-import { surfaceWater } from "../utils/enums/surfaceWater";
-
 export interface Planet {
   id: string;
+  externalId?: string;
+  externalUrl: string;
   nombre: string;
   periodo_rotacion: number;
   periodo_orbital: number;
@@ -9,7 +9,7 @@ export interface Planet {
   clima: string;
   gravedad: string;
   terreno: string;
-  surperficie_agua: surfaceWater;
+  surperficie_agua: number;
   poblacion: number;
   residentes: string[];
   peliculas: string[];

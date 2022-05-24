@@ -1,4 +1,4 @@
-import { Planet } from "../../model/Planet";
+import { Planet } from "../../../model/Planet";
 
 export const mapJsonToSpanishPropertiesObject = (json: object): Planet => {
   if (json === undefined) return null;
@@ -39,13 +39,13 @@ export const mapJsonToSpanishPropertiesObject = (json: object): Planet => {
         planet.peliculas = json[key];
         break;
       case "created":
-        planet.createdo = json[key];
+        planet.creado = json[key];
         break;
       case "edited":
-        planet.editedo = json[key];
+        planet.editado = json[key];
         break;
       case "url":
-      // const id = (json[key].planet.url = json[key]);
+        planet.url = json[key];
     }
   }
   return planet as Planet;

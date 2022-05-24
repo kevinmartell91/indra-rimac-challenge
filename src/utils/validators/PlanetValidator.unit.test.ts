@@ -1,4 +1,3 @@
-import { surfaceWater } from "../enums/surfaceWater";
 import { MockDataPlanet } from "../test/mockData";
 import { PlanetValidator } from "./PlanetValidator";
 
@@ -117,7 +116,7 @@ describe("Valida que la propiedad 'surperficie_agua'", () => {
   });
   test("reciba una de las opciones pemitidas ", () => {
     const mockData = new MockDataPlanet().getMockData();
-    mockData.surperficie_agua = surfaceWater.one;
+    mockData.surperficie_agua = 45;
     const res = validator.validate(mockData);
     expect(res).toStrictEqual({});
   });

@@ -1,7 +1,6 @@
 import { Validator } from "fluentvalidation-ts";
 import { Planet } from "../../model/Planet";
 import { dataType } from "../enums/dataTypes";
-import { surfaceWater } from "../enums/surfaceWater";
 import { textTypes } from "../enums/textTypes";
 import { RegexExpression } from "./RegexExpression";
 
@@ -60,12 +59,8 @@ export class PlanetValidator extends Validator<Planet> {
     this.ruleFor("surperficie_agua")
       .notNull()
       .withMessage("El valor no puede ser null")
-      .must((surperficie_agua) =>
-        Object.values(surfaceWater).includes(surperficie_agua)
-      )
-      .withMessage(
-        "El valor ingresado no esta dentro de las opciones permitidas"
-      );
+      .must((surperficie_agua) => typeof surperficie_agua === dataType.number)
+      .withMessage("El valor ingresado de ser un numero");
 
     this.ruleFor("poblacion")
       .notNull()

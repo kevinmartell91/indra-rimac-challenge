@@ -1,5 +1,3 @@
-import { surfaceWater } from "../enums/surfaceWater";
-
 export class MockDataPlanet {
   getMockData() {
     return {
@@ -11,7 +9,7 @@ export class MockDataPlanet {
       clima: "arid",
       gravedad: "1 standard",
       terreno: "desert",
-      surperficie_agua: surfaceWater.one,
+      surperficie_agua: 1,
       poblacion: 2000,
       residentes: ["https://swapi.py4e.com/api/films/3/"],
       peliculas: [
@@ -36,7 +34,7 @@ export const getMockData = {
   clima: "arid",
   gravedad: "1 standard",
   terreno: "desert",
-  surperficie_agua: surfaceWater.one,
+  surperficie_agua: 1,
   poblacion: 2000,
   residentes: ["https://swapi.py4e.com/api/films/3/"],
   peliculas: [
@@ -59,7 +57,7 @@ export const getMockCorrectParams = {
   clima: "arid",
   gravedad: "1 standard",
   terreno: "desert",
-  surperficie_agua: surfaceWater.one,
+  surperficie_agua: 1,
   poblacion: 2000,
   residentes: ["https://swapi.py4e.com/api/films/3/"],
   peliculas: [
@@ -82,7 +80,7 @@ export const getMockIncorrectParams = {
   clima: "arid",
   gravedad: "1 standard",
   terreno: "desert",
-  surperficie_agua: surfaceWater.one,
+  surperficie_agua: 1,
   poblacion: 2000,
   residentes: ["https://swapi.py4e.com/api/films/3/"],
   peliculas: [
@@ -107,7 +105,7 @@ export const getMockPlanets = [
     clima: "arid",
     gravedad: "1 standard",
     terreno: "desert",
-    surperficie_agua: surfaceWater.one,
+    surperficie_agua: 1,
     poblacion: 2000,
     residentes: ["https://swapi.py4e.com/api/films/3/"],
     peliculas: [
@@ -127,7 +125,7 @@ export const getMockPlanets = [
     clima: "arid",
     gravedad: "1 standard",
     terreno: "desert",
-    surperficie_agua: surfaceWater.one,
+    surperficie_agua: 1,
     poblacion: 2000,
     residentes: ["https://swapi.py4e.com/api/films/3/"],
     peliculas: ["https://swapi.py4e.com/api/films/6/"],
@@ -144,7 +142,7 @@ export const getMockPlanets = [
     clima: "arid",
     gravedad: "1 standard",
     terreno: "desert",
-    surperficie_agua: surfaceWater.one,
+    surperficie_agua: 1,
     poblacion: 2000,
     residentes: ["https://swapi.py4e.com/api/films/3/"],
     peliculas: [
