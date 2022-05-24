@@ -34,19 +34,20 @@ export class CreatePlanetController extends CreatePlanetService {
       params.id = uuidv4();
       const newPlanet = await this.createPlanet(params);
       const body: BodySuccess = {
-        message: "Successfully created planet!",
+        message: "Planeta creado exitosamente.",
         data: newPlanet,
       };
 
       if (newPlanet === null) {
-        body.message = "Se recibio su petición, pero vuelva a intertalo.";
+        body.message =
+          "Se recibió la petición, pero vuelva a intertalo más tarde.";
         return ResponseUtil.successfulResponseNoContent(body);
       }
 
       return ResponseUtil.successfulResponseCreated(body);
     } catch (e) {
       const body: BodyError = {
-        message: "Failed created planet",
+        message: "No se pudo crear el nuevo planeta",
         errorMessage: e.message,
         errorStack: e.errorStack,
       };

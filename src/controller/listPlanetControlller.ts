@@ -21,7 +21,7 @@ export class ListPlanetController extends ListPlanetService {
       // bodySuccess.rawData.metada
       // if (planets === null) return;
       const body: BodySuccess = {
-        message: "Successfully retrieved planet list!.",
+        message: "Listado de planetas exitoso.",
         data: planets,
       };
 
@@ -37,7 +37,7 @@ export class ListPlanetController extends ListPlanetService {
       return ResponseUtil.successfulResponseOk(body);
     } catch (e) {
       const body: BodyError = {
-        message: "Failed retrieved planet list!",
+        message: "No se pude listar los planetas.",
         errorMessage: e.message,
         errorStack: e.errorStack,
       };

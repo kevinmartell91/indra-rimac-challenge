@@ -19,7 +19,7 @@ export class GetByIdPlanetController extends GetByIdPlanetService {
     let planet;
     const id: string = event.pathParameters.id;
     const body: BodySuccess = {
-      message: "Successfully retrieved planet",
+      message: "Se recupero el planeta en forma exitosa.",
       data: void 0,
     };
     try {
@@ -32,7 +32,7 @@ export class GetByIdPlanetController extends GetByIdPlanetService {
       // otherwise retrieve from swapi
       planet = await getPlanetByIdSWAPIService(id);
       if (!planet) {
-        body.message = "No se encontraron registros con ese id.";
+        body.message = `No se encontraron registros con el id: ${id}`;
         body.data = {};
         return ResponseUtil.successfulResponseNoContent(body);
       } else {
@@ -47,7 +47,7 @@ export class GetByIdPlanetController extends GetByIdPlanetService {
       return ResponseUtil.successfulResponseOk(body);
     } catch (e) {
       const body: BodyError = {
-        message: "Failed retrieved planet.",
+        message: `No se pudo recuperar el registros con id: ${id}`,
         errorMessage: e.message,
         errorStack: e.errorStack,
       };
